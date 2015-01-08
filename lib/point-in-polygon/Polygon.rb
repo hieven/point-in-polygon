@@ -1,9 +1,6 @@
 require "matrix"
 class Polygon
 
-  # @sides
-  # @vertices
-
   def initialize(p)
     @sides = p.length
     @vertices = sort(p)
@@ -22,9 +19,10 @@ class Polygon
     if isConvex
       target_vector = target_vector(target)
       cross_product = each_cross_product(target_vector)
-      return isSameDir(cross_product) ? "Inside" : "Outside"
+      return isSameDir(cross_product) ? 1 : 0
     end
-    return "Please enter convex polygon"
+
+    return -1
   end
 
   protected
@@ -60,7 +58,6 @@ class Polygon
     len = vectors.length
 
     for i in 1..len
-      puts i
       cross_product << vectors[i-1].cross_product(vectors[i % @sides])
     end
 

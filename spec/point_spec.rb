@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'Point'
+require 'point-in-polygon/Point'
 
 describe Point do
 

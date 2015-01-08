@@ -1,4 +1,4 @@
-# PIP(point in convex polygon)
+# point in convex polygon
 
 ## Infrastructure
 
@@ -16,6 +16,11 @@
 ## Get started
 
     ruby main.rb
+
+## Test
+
+    gem install rspec
+    rspec
 
 ## Test case
 

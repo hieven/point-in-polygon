@@ -1,5 +1,4 @@
-require "./lib/Point"
-require "./lib/Polygon"
+require 'point-in-polygon'
 
 
 
@@ -18,6 +17,16 @@ while !file.eof?
   target = Point[tmp[0].to_i, tmp[1].to_i, 0]
 
   a = Polygon.new(p)
-  puts a.isInside(target)
+
+  status = a.isInside(target)
+
+  case status
+  when 1
+    puts "Inside"
+  when 0
+    puts "Outside"
+  when -1
+    puts "You need to give a convex polygon"
+  end
 end
 

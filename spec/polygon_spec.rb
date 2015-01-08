@@ -1,6 +1,6 @@
 require 'spec_helper'
-require 'Polygon'
-require 'Point'
+require 'point-in-polygon/Polygon'
+require 'point-in-polygon/Point'
 
 describe Polygon do
 
@@ -30,25 +30,25 @@ describe Polygon do
       points = [ Point[0, 0, 0], Point[3, 0, 0], Point[0, 3, 0] ]
       p = Polygon.new points
       target = Point[0, 0, 0]
-      p.isInside(target).should match("Inside")
+      p.isInside(target).should == 1
     end
     it "should return 'Inside'" do
       points = [ Point[0, 0, 0], Point[3, 0, 0], Point[0, 3, 0] ]
       p = Polygon.new points
       target = Point[1, 1, 0]
-      p.isInside(target).should match("Inside")
+      p.isInside(target).should == 1
     end
     it "should return 'Outside'" do
       points = [ Point[0, 0, 0], Point[3, 0, 0], Point[0, 3, 0] ]
       p = Polygon.new points
       target = Point[-1, -1, 0]
-      p.isInside(target).should match("Outside")
+      p.isInside(target).should == 0
     end
     it "should return 'Please enter convex polygon'" do
       points = [ Point[0, 0, 0], Point[3, 0, 0], Point[0, 3, 0], Point[1, 1, 0] ]
       p = Polygon.new points
       target = Point[0, 0, 0]
-      p.isInside(target).should match("Please enter convex polygon")
+      p.isInside(target).should == -1
     end
 
   end
