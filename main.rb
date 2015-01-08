@@ -1,4 +1,3 @@
-require "matrix"
 require "./lib/Point"
 require "./lib/Polygon"
 

@@ -1,3 +1,4 @@
+require "matrix"
 class Point < Vector
   # attr_accessor :p
 

@@ -1,3 +1,4 @@
+require "matrix"
 class Polygon
 
   # @sides
@@ -57,7 +58,9 @@ class Polygon
 
     cross_product = []
     len = vectors.length
+
     for i in 1..len
+      puts i
       cross_product << vectors[i-1].cross_product(vectors[i % @sides])
     end
 
