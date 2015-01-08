@@ -1,14 +1,16 @@
 # PIP(point in convex polygon)
 
-## 架構說明
+## Infrastructure
 
 * There are two models including Point and Polygon
 * Point inherits from Vector
 * Polygon has some important method
-  1. isConvex
+  1. isConvex<br>
+
      It will return whether the polygon is convex or convave
 
   2. isInside
+
      It will return the target point is inside polygon or not
 
 ## Get started
